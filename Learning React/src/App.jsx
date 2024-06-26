@@ -17,10 +17,13 @@ function App() {
 
 function Demo()
 {
+  const className="demo";
+  let name="Mayank Behl";
   return (
   <>
-  <div className="demo">
+  <div className={className}>
     <p>This is child component for app, Called Demo</p>
+    <p>My name is {name} </p>
   </div>
   </>);
 }
