@@ -4,7 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
-
+.hello
+{
+  font-size:30px;
+  font-weight:bold;
+  color:blue;
+  filter:drop-shadow(2px 2px 5px red);
+}
 .logo {
   height: 6em;
   padding: 1.5em;
