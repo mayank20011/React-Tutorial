@@ -1,0 +1,39 @@
+*
+{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  text-align:left;
+}
+.video
+{
+  display:flex;
+  flex-direction:column;
+  row-gap:1px;
+  justify-content:left;
+  color:antiquewhite;
+  margin:10px auto;
+  border:1px solid #ccc;
+  padding:2px;
+  border-radius:4px;
+  width:303px;
+}
+.vtd
+{
+ display:flex;
+ column-gap:10px;
+}
+.vtp
+{
+  font-size:12px;
+}
+.channel
+{
+  font-size:14px;
+  font-weight:bold;
+}
+.title
+{
+  font-size:18px;
+  padding-bottom:8px;
+}
