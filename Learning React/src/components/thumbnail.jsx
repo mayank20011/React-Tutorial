@@ -1,7 +1,7 @@
 import "./thumbnail.css";
 const viewstimediv="vtd";
 const viewstimep="vtp";
-function Thumbnail({imgsrc,title,channel,views,time})
+function Thumbnail({imgsrc,title,channel="Traversy Media",views,time})
 {
     return (
     <div className="video">

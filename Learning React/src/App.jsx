@@ -28,7 +28,6 @@ function App() {
         <Thumbnail
           imgsrc="https://picsum.photos/301/150"
           title="Node Js Tutorial"
-          channel="Traversy Media"
           views="1M"
           time="1 year ago"
         />
