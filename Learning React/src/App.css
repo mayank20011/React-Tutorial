@@ -25,7 +25,8 @@
 {
   padding:2px;
   display:flex;
-  width:308px;
+  /* width:308px; */
+  width:100%;
   column-gap:10px;
   overflow:auto;
   scrollbar-width: thin;
