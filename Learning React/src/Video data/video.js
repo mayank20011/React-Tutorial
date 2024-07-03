@@ -1,0 +1,60 @@
+const video = [
+  {
+    imgsrc: "https://picsum.photos/301/150",
+    title: "React Js Tutorial",
+    channel: "Coder Dost",
+    views: "10K",
+    time: "1 month ago",
+    verified: true,
+  },
+  {
+    imgsrc: "https://picsum.photos/302/150",
+    title: "Node Js Tutorial",
+    channel: "Coder Dost",
+    views: "100K",
+    time: "1.5 month ago",
+    verified: false,
+  },
+  {
+    imgsrc: "https://picsum.photos/300/150",
+    title: "Html Tutorial",
+    channel: "Coder Dost",
+    views: "1M",
+    time: "2 month ago",
+    verified: true,
+  },
+  {
+    imgsrc: "https://picsum.photos/299/150",
+    title: "Css Tutorial",
+    channel: "Apna Clg",
+    views: "102K",
+    time: "3 month ago",
+    verified: false,
+  },
+  {
+    imgsrc: "https://picsum.photos/300/151",
+    title: "Mongodb Tutorial",
+    channel: "Coder Dost",
+    views: "118K",
+    time: "10 days ago",
+    verified: true,
+  },
+  {
+    imgsrc: "https://picsum.photos/303/150",
+    title: "Mongose Tutorial",
+    channel: "Traversy Media",
+    views: "109K",
+    time: "1 month ago",
+    verified: false,
+  },
+  {
+    imgsrc: "https://picsum.photos/298/150",
+    title: "DOM Tutorial",
+    channel: "Apna Dost",
+    views: "10M",
+    time: "18 month ago",
+    verified: false,
+  },
+];
+
+export default video;
