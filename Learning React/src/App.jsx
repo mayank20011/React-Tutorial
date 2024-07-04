@@ -4,7 +4,7 @@ import Heading from "./components/heading";
 
 function App() {
   return (
-    <>
+    <div style={{border:"2px solid white", cursor:"pointer"}}onClick={()=>{ console.log("Clicked on App Component")}}>
       <Heading value="Click on the buttons to send a alert" />
       <Button
         name="Pause"
@@ -36,7 +36,7 @@ function App() {
       >
         Pause/Play
       </Button>
-    </>
+    </div>
   );
 }
 
