@@ -1,9 +1,9 @@
-function Button({ children }) {
+function Button({ children ,func}) {
 
   function handleClick(e) {
-    alert(`You Clicked on ${e.target.firstChild.data} Button`);
+    func();
   }
-  
+
   return <button onClick={handleClick}>{children}</button>;
 }
 export default Button;
