@@ -1,33 +1,17 @@
-function empty()
-{
-
-}
-function Button({ children ,func=empty, onPlay=empty, onPause=empty, btn}) {
-
-  let state="pause";
-
+function Button({ children, changeCount, count }) {
   function handleClick(e) {
-    
-    e.stopPropagation();
-    if(btn=='P')
-      {
-        func();
+    if (e.target.innerHTML == "Increment ++") {
+      count++;
+      changeCount(count);
+    } else {
+      if (count == 0) {
+        alert('Count Can not be negative');
+      } else {
+        count--;
+        changeCount(count);
       }
-      else
-      {
-        if(state=="pause")
-          {
-            onPause();
-            state="play";
-          }
-          else
-          {
-            onPlay();
-            state="pause";
-          }
-      }
+    }
   }
-
   return <button onClick={handleClick}>{children}</button>;
 }
 export default Button;
