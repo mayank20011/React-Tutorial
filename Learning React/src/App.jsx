@@ -1,6 +1,7 @@
 import "./App.css";
 import Button from "./components/button";
 import Heading from "./components/heading";
+import Assignment from "./components/assignment";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
       >
         Pause/Play
       </Button>
+      <Heading value="Homework Assignments" />
+      <Assignment/>
     </div>
   );
 }
