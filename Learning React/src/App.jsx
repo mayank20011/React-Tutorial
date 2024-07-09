@@ -16,6 +16,7 @@ function App() {
       <Button count={count} changeCount={setCount}>
         Decreament --
       </Button>
+      <Timer/>
     </>
   );
 }
