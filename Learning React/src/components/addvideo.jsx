@@ -1,4 +1,5 @@
 function AddVideo() {
+
   function handleForm(e) {
     e.preventDefault();
     const obj=
@@ -12,10 +13,10 @@ function AddVideo() {
     console.log(obj);
  }
   
- 
-
   return (
+
     <form className="m-3 border border-3 border-primary rounded-1 p-2 " onSubmit={handleForm}>
+
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">
           Title :
@@ -76,7 +77,9 @@ function AddVideo() {
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
+      
     </form>
+    
   );
 }
 export default AddVideo;

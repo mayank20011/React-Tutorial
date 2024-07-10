@@ -1,9 +1,11 @@
 import "./App.css";
 import Thumbnail from "./components/thumbnail";
-import videos from "./assets/data/video";
+import videosDB from "./assets/data/video";
 import AddVideo from "./components/addvideo";
+import { useState } from "react";
 
 function App() {
+  let [videos,setVideos]=useState(videosDB);
   return (
     <>
       <div className="container">
