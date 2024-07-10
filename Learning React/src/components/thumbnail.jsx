@@ -11,7 +11,7 @@ function Thumbnail({title="ABC", channelName="Traversy Media", verified=false, v
       <div className="card-body mt-0 pt-0">
        <div className="card-heading mb-3">{title}</div>
        <div className="d-flex small">
-        {channelName} {verified ? "✅" : null}
+        {channelName} {verified && "✅"}
        </div>
        <div className="d-flex small">
         {views} views . {time}

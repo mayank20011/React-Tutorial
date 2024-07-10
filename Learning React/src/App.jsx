@@ -21,7 +21,7 @@ function App() {
             key={index+1}
             title={video.title}
             channelName={video.channelname}
-            verified={videos.verified}
+            verified={video.verified}
             views={video.views}
             time={video.time}
           />
