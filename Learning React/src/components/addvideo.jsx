@@ -13,6 +13,11 @@ function AddVideo({ addVideo }) {
       time: e.target[4].value,
     };
     addVideo(obj);
+    e.target[0].value="";
+    e.target[1].value="";
+    e.target[2].value="";
+    e.target[3].value="";
+    e.target[4].value="";
   }
 
   return (
