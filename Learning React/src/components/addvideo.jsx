@@ -10,7 +10,7 @@ function AddVideo({ addVideo }) {
       channelname: e.target[1].value,
       verified: tf,
       views: e.target[3].value,
-      time: e.target[4].value,
+      time: e.target[4].value
     };
     addVideo(obj);
     e.target[0].value="";

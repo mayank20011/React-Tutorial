@@ -9,9 +9,16 @@ function App() {
 
   function addVideo(video)
   {
-    videos.push(video);
+    videos.push({ ...video, id:videos.length+1});
     setVideos([...videos]);
   }
+
+  function dltvideo(id)
+  {
+    const newVideos=videos.filter(video=>video.id!=id);
+    console.log(newVideos);
+    setVideos([...newVideos]);
+  } 
 
   return (
     <>
@@ -24,6 +31,8 @@ function App() {
             verified={video.verified}
             views={video.views}
             time={video.time}
+            dltvideo={dltvideo}
+            id={video.id}
           />
         ))}
       </div>
