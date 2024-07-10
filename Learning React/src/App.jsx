@@ -16,7 +16,6 @@ function App() {
   function dltvideo(id)
   {
     const newVideos=videos.filter(video=>video.id!=id);
-    console.log(newVideos);
     setVideos([...newVideos]);
   } 
 
