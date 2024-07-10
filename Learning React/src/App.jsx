@@ -6,6 +6,13 @@ import { useState } from "react";
 
 function App() {
   let [videos,setVideos]=useState(videosDB);
+
+  function addVideo(video)
+  {
+    videos.push(video);
+    setVideos([...videos]);
+  }
+
   return (
     <>
       <div className="container">
@@ -20,7 +27,7 @@ function App() {
           />
         ))}
       </div>
-      <AddVideo />
+      <AddVideo addVideo={addVideo}/>
     </>
   );
 }

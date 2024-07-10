@@ -1,4 +1,4 @@
-function AddVideo() {
+function AddVideo({addVideo}) {
 
   function handleForm(e) {
     e.preventDefault();
@@ -10,7 +10,7 @@ function AddVideo() {
       views:e.target[3].value,
       time:e.target[4].value
     }
-    console.log(obj);
+    addVideo(obj);
  }
   
   return (
@@ -79,7 +79,7 @@ function AddVideo() {
       </button>
       
     </form>
-    
+
   );
 }
 export default AddVideo;
