@@ -7,10 +7,10 @@ function Thumbnail({
   views = "10K",
   time = "3 months ago",
   id,
-  dltvideo
+  dltvideo,
+  editVideo,
 }) {
-  function dltThisVideo(e)
-  {
+  function dltThisVideo(e) {
     dltvideo(e.target.parentElement.id);
   }
   return (
@@ -22,6 +22,15 @@ function Thumbnail({
       >
         X
       </button>
+
+      <button
+        className="bg-warning text-white"
+        style={{ position: "absolute", left: "3px", top: "3px" }}
+        onClick={()=>{ editVideo(id)}}
+      >
+        <i className="fa-regular fa-pen-to-square"></i>
+      </button>
+
       <div className="card-header mb-0 pb-0">
         <img
           src={`https://picsum.photos/id/${id}/300/150`}
