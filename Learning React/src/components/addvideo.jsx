@@ -8,14 +8,16 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
      views:"",
      time:""
    }
-   
+
   let [value, setValue]=useState(defaultValue);
 
-
+ useEffect(()=>{
   if(editableVideo)
     {
        setValue(editableVideo);
     }
+ },[editableVideo]);
+  
 
   function handleForm(e) {
     e.preventDefault();
@@ -62,6 +64,9 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           aria-describedby="emailHelp"
           placeholder="Enter Title ..."
           value={value.title}
+          onChange={(e)=>{
+            setValue({...value, title:e.target.value})
+          }}
         />
       </div>
       <div className="mb-3">
@@ -74,6 +79,10 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           id="exampleInputPassword1"
           placeholder="Enter Channel Name ..."
           value={value.channelname}
+          onChange={(e)=>
+            {
+              setValue({...value, channelname:e.target.value});
+            }}
         />
       </div>
       <div className="mb-3">
@@ -86,6 +95,9 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           id="verified"
           placeholder="Y/N"
           value={value.verified}
+          onChange={(e)=>{
+            setValue({...value, verified:e.target.value});
+          }}
         />
       </div>
       <div className="mb-3">
@@ -98,6 +110,9 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           id="views"
           placeholder="No of views you got ..."
           value={value.views}
+          onChange={(e)=>{
+            setValue({...value, views:e.target.value});
+          }}
         />
       </div>
       <div className="mb-3">
@@ -110,6 +125,9 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           id="time"
           placeholder="Time when you uploaded it ..."
           value={value.time}
+          onChange={(e)=>{
+            setValue({...value, time:e.target.value});
+          }}
         />
       </div>
 
