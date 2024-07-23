@@ -1,4 +1,21 @@
+import {useState, useEffect} from "react";
 function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
+   let defaultValue=
+   {
+     title:"",
+     channelname:"",
+     verified:"",
+     views:"",
+     time:""
+   }
+   
+  let [value, setValue]=useState(defaultValue);
+
+
+  if(editableVideo)
+    {
+       setValue(editableVideo);
+    }
 
   function handleForm(e) {
     e.preventDefault();
@@ -44,7 +61,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter Title ..."
-          value={editableVideo?.title}
+          value={value.title}
         />
       </div>
       <div className="mb-3">
@@ -56,7 +73,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           className="form-control"
           id="exampleInputPassword1"
           placeholder="Enter Channel Name ..."
-          value={editableVideo?.channelname}
+          value={value.channelname}
         />
       </div>
       <div className="mb-3">
@@ -68,7 +85,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           className="form-control"
           id="verified"
           placeholder="Y/N"
-          value={editableVideo?.verified}
+          value={value.verified}
         />
       </div>
       <div className="mb-3">
@@ -80,7 +97,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           className="form-control"
           id="views"
           placeholder="No of views you got ..."
-          value={editableVideo?.views}
+          value={value.views}
         />
       </div>
       <div className="mb-3">
@@ -92,7 +109,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
           className="form-control"
           id="time"
           placeholder="Time when you uploaded it ..."
-          value={editableVideo?.time}
+          value={value.time}
         />
       </div>
 
@@ -103,159 +120,3 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
   );
 }
 export default AddVideo;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState, useEffect } from "react";
-
-// function AddVideo({ addVideo, editableVideo, updateVideo }) {
-//   const [formState, setFormState] = useState({
-//     title: "",
-//     channelname: "",
-//     verified: "",
-//     views: "",
-//     time: "",
-//   });
-
-//   useEffect(() => {
-//     if (editableVideo) {
-//       setFormState({
-//         title: editableVideo.title,
-//         channelname: editableVideo.channelname,
-//         verified: editableVideo.verified ? "Y" : "N",
-//         views: editableVideo.views,
-//         time: editableVideo.time,
-//       });
-//     }
-//   }, [editableVideo]);
-
-//   function handleForm(e) {
-//     e.preventDefault();
-//     const tf = formState.verified === "Y" || formState.verified.toLowerCase().trim() === "true";
-
-//     const obj = {
-//       title: formState.title,
-//       channelname: formState.channelname,
-//       verified: tf,
-//       views: formState.views,
-//       time: formState.time,
-//     };
-
-//     if (editableVideo) {
-//       updateVideo(obj);
-//     } else {
-//       addVideo(obj);
-//     }
-
-//     setFormState({
-//       title: "",
-//       channelname: "",
-//       verified: "",
-//       views: "",
-//       time: "",
-//     });
-//   }
-
-//   function handleChange(e) {
-//     const { name, value } = e.target;
-//     setFormState((prevState) => ({
-//       ...prevState,
-//       [name]: value,
-//     }));
-//   }
-
-//   return (
-//     <form className="m-3 border border-3 border-primary rounded-1 p-2" onSubmit={handleForm}>
-//       <div className="mb-3">
-//         <label htmlFor="title" className="form-label">
-//           Title :
-//         </label>
-//         <input
-//           type="text"
-//           className="form-control"
-//           id="title"
-//           name="title"
-//           placeholder="Enter Title ..."
-//           value={formState.title}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label htmlFor="channelname" className="form-label">
-//           Channel Name :
-//         </label>
-//         <input
-//           type="text"
-//           className="form-control"
-//           id="channelname"
-//           name="channelname"
-//           placeholder="Enter Channel Name ..."
-//           value={formState.channelname}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label htmlFor="verified" className="form-label">
-//           Verified :
-//         </label>
-//         <input
-//           type="text"
-//           className="form-control"
-//           id="verified"
-//           name="verified"
-//           placeholder="Y/N"
-//           value={formState.verified}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label htmlFor="views" className="form-label">
-//           Views :
-//         </label>
-//         <input
-//           type="text"
-//           className="form-control"
-//           id="views"
-//           name="views"
-//           placeholder="No of views you got ..."
-//           value={formState.views}
-//           onChange={handleChange}
-//         />
-//       </div>
-//       <div className="mb-3">
-//         <label htmlFor="time" className="form-label">
-//           Time :
-//         </label>
-//         <input
-//           type="text"
-//           className="form-control"
-//           id="time"
-//           name="time"
-//           placeholder="Time when you uploaded it ..."
-//           value={formState.time}
-//           onChange={handleChange}
-//         />
-//       </div>
-
-//       <button type="submit" className="btn btn-primary">
-//         {editableVideo ? "Edit" : "Submit"}
-//       </button>
-//     </form>
-//   );
-// }
-
-// export default AddVideo;
