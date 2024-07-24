@@ -46,6 +46,7 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
     {
       addVideo(obj);
     }
+    setValue(defaultValue);
   }
 
   return (
