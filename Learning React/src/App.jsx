@@ -6,6 +6,20 @@ import { useState } from "react";
 
 let editid;
 function App() {
+  function videoReducer(videos,action)
+  {
+    switch(action.type)
+    {
+      case 'ADD':
+        return ;
+      case 'DELETE':
+        return ;
+      case 'Update':
+      return ;
+      default:
+        return videos;
+    }
+  }
   let [videos,dispatch]=useReducer(videoReducer,videosDB);
   // let [videos,setVideos]=useState(videosDB);
   let [editableVideo,setEditableVideo]=useState(null);
