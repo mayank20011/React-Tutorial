@@ -6,7 +6,8 @@ import { useState } from "react";
 
 let editid;
 function App() {
-  let [videos,setVideos]=useState(videosDB);
+  let [videos,dispatch]=useReducer(videoReducer,videosDB);
+  // let [videos,setVideos]=useState(videosDB);
   let [editableVideo,setEditableVideo]=useState(null);
   function addVideo(video)
   {
