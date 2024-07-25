@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
+function AddVideo({ dispatch, editableVideo}) {
    let defaultValue=
    {
      title:"",
@@ -40,11 +40,11 @@ function AddVideo({ addVideo ,  editableVideo, updateVideo}) {
     e.target[4].value="";
     if(editableVideo)
     {
-      updateVideo(obj);
+      dispatch({type:"UPDATE", payload:obj});
     }
     else
     {
-      addVideo(obj);
+      dispatch({type:"ADD", payload:obj});
     }
     setValue(defaultValue);
   }

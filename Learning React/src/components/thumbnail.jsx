@@ -7,11 +7,11 @@ function Thumbnail({
   views = "10K",
   time = "3 months ago",
   id,
-  dltvideo,
+  dispatch,
   editVideo,
 }) {
   function dltThisVideo(e) {
-    dltvideo(e.target.parentElement.id);
+    dispatch({type:"DELETE", payload:e.target.parentElement.id});
   }
   return (
     <div className="card bg-dark text-light" id={id}>
