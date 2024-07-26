@@ -1,5 +1,6 @@
 import "./thumbnail.css";
-
+import ThemeContext from "../../context/ThemeContext";
+import { useContext } from "react";
 function Thumbnail({
   title = "ABC",
   channelName = "Traversy Media",
@@ -10,11 +11,13 @@ function Thumbnail({
   dispatch,
   editVideo,
 }) {
+
+  const theme=useContext(ThemeContext);
   function dltThisVideo(e) {
     dispatch({type:"DELETE", payload:e.target.parentElement.id});
   }
   return (
-    <div className="card bg-dark text-light" id={id}>
+    <div className={`card ${theme === "dark"?"bg-dark text-light":"bg-light text-dark"} `} id={id}>
       <button
         className="bg-danger text-white"
         style={{ position: "absolute", right: "3px", top: "3px" }}
