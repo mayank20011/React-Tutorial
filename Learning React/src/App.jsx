@@ -2,10 +2,14 @@ import "./App.css";
 import Thumbnail from "./components/thumbnail";
 import videosDB from "./assets/data/video";
 import AddVideo from "./components/addvideo";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
+
 
 let editid;
 function App() {
+
+  const themecontext=useContext(ThemeContext);
   let [editableVideo, setEditableVideo] = useState(null);
   function videoReducer(videos, action) {
     switch (action.type) {
@@ -34,8 +38,8 @@ function App() {
   }
 
   return (
-    <>
-      <div className="container">
+    <div className={`${themecontext}`}>
+      <div className={`container`}>
         {videos.map((video, index) => (
           <Thumbnail
             key={index + 1}
@@ -54,7 +58,7 @@ function App() {
         dispatch={dispatch}
         editableVideo={editableVideo}
       />
-    </>
+    </div>
   );
 }
 
