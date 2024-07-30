@@ -8,8 +8,9 @@ import ThemeContext from "../context/ThemeContext";
 
 let editid;
 function App() {
-
-  const themecontext=useContext(ThemeContext);
+  console.log('App Rendered');
+  let themecontext=useContext(ThemeContext);
+  const [mode, setMode]=useState(themecontext);
   let [editableVideo, setEditableVideo] = useState(null);
   function videoReducer(videos, action) {
     switch (action.type) {
@@ -38,7 +39,8 @@ function App() {
   }
 
   return (
-    <div className={`${themecontext}`}>
+    <ThemeContext.Provider value={mode}>
+    <div className={`${mode}`}>
       <div className={`container`}>
         {videos.map((video, index) => (
           <Thumbnail
@@ -58,7 +60,9 @@ function App() {
         dispatch={dispatch}
         editableVideo={editableVideo}
       />
+      <button className={`${mode}`} onClick={()=>{ setMode( mode == "dark" ? "light":"dark") }}>Change Theme to {mode === "dark" ? "light" : "dark"} Mode</button>
     </div>
+    </ThemeContext.Provider>
   );
 }
 

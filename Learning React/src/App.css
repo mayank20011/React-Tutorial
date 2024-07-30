@@ -15,3 +15,11 @@
   color:black;
   background:white;
 }
+button
+{
+  margin-bottom:5px;
+}
+button.dark
+{
+  border:2px solid white;
+}
