@@ -42,6 +42,7 @@ function App() {
   }
 
   return (
+    
     <ThemeContext.Provider value={mode}>
       <VideosContext.Provider value={videos}>
         <VideoDispatchContext.Provider value={dispatch}>
