@@ -1,6 +1,7 @@
 import "./thumbnail.css";
 import ThemeContext from "../../context/ThemeContext";
 import { useContext } from "react";
+import VideoDispatchContext from "../../context/VideoDispatchContext";
 function Thumbnail({
   title = "ABC",
   channelName = "Traversy Media",
@@ -8,10 +9,9 @@ function Thumbnail({
   views = "10K",
   time = "3 months ago",
   id,
-  dispatch,
   editVideo,
 }) {
-
+  const dispatch= useContext(VideoDispatchContext);
   const theme=useContext(ThemeContext);
   function dltThisVideo(e) {
     dispatch({type:"DELETE", payload:e.target.parentElement.id});

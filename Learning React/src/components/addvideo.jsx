@@ -1,5 +1,8 @@
 import {useState, useEffect} from "react";
-function AddVideo({ dispatch, editableVideo}) {
+import { useContext } from "react";
+import VideoDispatchContext from "../../context/VideoDispatchContext";
+function AddVideo({editableVideo}) {
+  const dispatch=useContext(VideoDispatchContext);
    let defaultValue=
    {
      title:"",
