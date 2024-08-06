@@ -1,9 +1,11 @@
-import { useContext } from "react";
-import VideosContext from "../../context/VideosContext";
+// import { useContext } from "react";
+// import VideosContext from "../../context/VideosContext";
 import Thumbnail from "./thumbnail";
+import useVideos from "../../customhooks/Videos";
 function VideosList({editVideo})
 {
-  const videos=useContext(VideosContext);
+  // const videos=useContext(VideosContext);
+  const videos=useVideos();
   return (
     <div className={`container`}>
     {
