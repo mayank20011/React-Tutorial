@@ -6,6 +6,7 @@ import ThemeContext from "../context/ThemeContext";
 import VideosContext from "../context/VideosContext";
 import VideosList from "./components/videosList";
 import VideoDispatchContext from "../context/VideoDispatchContext";
+import Counter from "./components/counter";
 
 let editid;
 function App() {
@@ -42,25 +43,22 @@ function App() {
   }
 
   return (
-    
     <ThemeContext.Provider value={mode}>
       <VideosContext.Provider value={videos}>
         <VideoDispatchContext.Provider value={dispatch}>
-
-        <div className={`${mode}`}>
-          <VideosList editVideo={editVideo}/>
-          <AddVideo editableVideo={editableVideo}/>
-          <button
-            className={`${mode}`}
-            onClick={() => {
-              setMode(mode == "dark" ? "light" : "dark");
-            }}
-          >
-            Change Theme to {mode === "dark" ? "light" : "dark"} Mode
-          </button>
-        </div>
-
-
+          <div className={`${mode}`}>
+            <Counter />
+            <VideosList editVideo={editVideo} />
+            <AddVideo editableVideo={editableVideo} />
+            <button
+              className={`${mode}`}
+              onClick={() => {
+                setMode(mode == "dark" ? "light" : "dark");
+              }}
+            >
+              Change Theme to {mode === "dark" ? "light" : "dark"} Mode
+            </button>
+          </div>
         </VideoDispatchContext.Provider>
       </VideosContext.Provider>
     </ThemeContext.Provider>
