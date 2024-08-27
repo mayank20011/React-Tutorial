@@ -1,16 +1,16 @@
 import "./counter.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Counter() {
   let [count, setCount] = useState(0);
 
-  let render = 1;
+  let render = useRef(1);
 
   function addCount() {
     count++;
     setCount(count);
-    render++;
-    console.log(`No of renders for counter component are: ${render}`);
+    render.current++;
+    console.log(`No of renders for counter component are: ${render.current}`);
   }
 
   return (
