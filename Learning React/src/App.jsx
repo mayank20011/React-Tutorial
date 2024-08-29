@@ -7,6 +7,7 @@ import VideosContext from "../context/VideosContext";
 import VideosList from "./components/videosList";
 import VideoDispatchContext from "../context/VideoDispatchContext";
 import Counter from "./components/counter";
+import EffectComponent from "./components/EffectComponent";
 
 let editid;
 function App() {
@@ -58,6 +59,7 @@ function App() {
             >
               Change Theme to {mode === "dark" ? "light" : "dark"} Mode
             </button>
+            <EffectComponent/>
           </div>
         </VideoDispatchContext.Provider>
       </VideosContext.Provider>
