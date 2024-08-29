@@ -1,10 +1,15 @@
 import { useRef, useEffect, useState } from "react";
 function EffectComponent() {
   const inputbox = useRef("");
+  let i=useRef(0);
   const [deletee, setDeletee] = useState(false);
   useEffect(() => {
     if (!deletee) {
       inputbox.current.style.boxShadow = "5px 5px 5px red";
+      setInterval(()=>{
+        console.log(`value of i is: ${i.current}`);
+        i.current++;
+      },1000);
     }
   }, []);
   function remove() {
