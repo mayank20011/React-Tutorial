@@ -1,14 +1,13 @@
-import { useRef } from "react"
-
+import { useRef, useEffect } from "react";
 
 function EffectComponent() {
+  const inputbox = useRef("");
 
-  const inputbox=useRef("");
-  inputbox.current.style.boxShadow="2px 2px 2px solid black"; 
+  useEffect(() => {
+    inputbox.current.style.boxShadow = "5px 5px 5px red";
+  }, []);
 
-  return (
-    <input type="text" ref={inputbox}/>
-  )
+  return <input style={{display:"block", marginBottom:"20px"}} type="text" ref={inputbox} />;
 }
 
 export default EffectComponent;
